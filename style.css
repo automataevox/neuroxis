@@ -1,0 +1,991 @@
+/* ============================================
+   NEXUS PRIME - TERMINAL AESTHETIC
+   Clean CLI Interface - Hot Pink & Black
+   ============================================ */
+
+:root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #111111;
+    --color-text: #e5e5e5;
+    --color-text-dim: #888888;
+    --color-accent: rgb(234, 51, 209);
+    --color-border: #1f1f1f;
+    --font-family: 'Courier New', monospace;
+    --padding-sm: 10px;
+    --padding-md: 12px;
+    --padding-lg: 15px;
+    --border-width: 1px;
+    --gap-sm: 10px;
+    --gap-md: 15px;
+}
+
+/* ============================================
+   RESET & GLOBALS
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: var(--bg-primary);
+    color: var(--color-text);
+    font-family: var(--font-family);
+    line-height: 1.4;
+    font-size: 14px;
+    overflow-x: hidden;
+}
+
+/* Global Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family);
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-text);
+}
+
+/* Remove default list styles */
+ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove default input/button styles */
+input, button, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-dim);
+}
+
+/* ============================================
+   LEGACY NAVBAR STYLING
+   ============================================ */
+
+.navbar,
+.navbar-inverse,
+.header {
+    background: var(--bg-secondary) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--color-border) !important;
+    box-shadow: none !important;
+    padding: 10px 20px !important;
+}
+
+.navbar-brand {
+    color: var(--color-accent) !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+    letter-spacing: 1px !important;
+    text-decoration: none !important;
+    margin-right: 20px !important;
+}
+
+.navbar-brand:hover {
+    color: var(--color-text) !important;
+}
+
+/* Navbar nav links */
+.navbar-nav {
+    margin: 0 !important;
+}
+
+.nav-item {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.nav-link {
+    color: var(--color-text-dim) !important;
+    font-size: 13px !important;
+    padding: 8px 12px !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--color-accent) !important;
+    background: transparent !important;
+}
+
+/* Navbar icons */
+.nav-link .fa {
+    margin-right: 5px !important;
+    color: var(--color-accent) !important;
+}
+
+.nav-link:hover .fa {
+    color: var(--color-text) !important;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    background: var(--bg-secondary) !important;
+    border: 1px solid var(--color-border) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+    padding: 8px 0 !important;
+    border-radius: 0 !important;
+}
+
+.dropdown-item {
+    color: var(--color-text-dim) !important;
+    padding: 8px 16px !important;
+    font-size: 13px !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background: var(--bg-primary) !important;
+    color: var(--color-accent) !important;
+}
+
+.dropdown-header {
+    color: var(--color-accent) !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+    letter-spacing: 0.5px !important;
+    padding: 8px 16px !important;
+    margin: 4px 0 !important;
+}
+
+.dropdown-divider {
+    background: var(--color-border) !important;
+    margin: 6px 0 !important;
+}
+
+/* Navbar toggler (mobile) */
+.navbar-toggler {
+    color: var(--color-accent) !important;
+    border: 1px solid var(--color-accent) !important;
+    padding: 6px 10px !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:hover {
+    outline: none !important;
+    border-color: var(--color-text) !important;
+    color: var(--color-text) !important;
+}
+
+.navbar-toggler-icon {
+    background-image: none !important;
+    width: 16px !important;
+    height: 12px !important;
+    position: relative !important;
+    display: inline-block !important;
+}
+
+/* User display */
+.display-user-tiny {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.display-user-avatar {
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 50% !important;
+    border: 1px solid var(--color-accent) !important;
+}
+
+.display-user-username {
+    color: var(--color-text-dim) !important;
+    font-size: 13px !important;
+}
+
+.nav-user-link:hover .display-user-username {
+    color: var(--color-accent) !important;
+}
+
+/* Navbar left/right sections */
+.navbar-left {
+    margin-right: auto !important;
+}
+
+.navbar-right {
+    margin-left: auto !important;
+}
+
+/* Collapse/expand animation */
+.navbar-collapse {
+    padding: 0 !important;
+}
+
+.collapse:not(.show) {
+    display: none;
+}
+
+.collapse.show {
+    display: block;
+}
+
+/* Notifications */
+.navbar-notifications {
+    margin: 0 15px !important;
+}
+
+.navbar-notifications-group {
+    display: flex !important;
+    gap: 10px !important;
+    align-items: center !important;
+}
+
+/* ============================================
+   TERMINAL CONTAINER
+   ============================================ */
+
+.terminal-container {
+    background: var(--bg-primary);
+    color: var(--color-text);
+    font-family: var(--font-family);
+    padding: 20px;
+    border: 1px solid var(--color-border);
+    line-height: 1.4;
+    max-width: 1200px;
+    margin: auto;
+    min-height: 100vh;
+}
+
+/* ============================================
+   CLI HEADER
+   ============================================ */
+
+.cli-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 15px;
+}
+
+.cli-header .accent {
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+.cli-header .dim {
+    color: var(--color-text-dim);
+}
+
+/* ============================================
+   BANNER
+   ============================================ */
+
+.banner {
+    background: var(--bg-secondary);
+    padding: var(--padding-md);
+    margin-bottom: 15px;
+    border-left: 4px solid var(--color-accent);
+}
+
+.banner .accent {
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+/* ============================================
+   INFO GRID
+   ============================================ */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--gap-md);
+    margin-bottom: 15px;
+}
+
+.info-block {
+    background: var(--bg-secondary);
+    padding: var(--padding-md);
+    border-left: 4px solid var(--color-accent);
+    border-top: 1px solid var(--color-border);
+}
+
+.block-title {
+    color: var(--color-accent);
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.block-content {
+    color: var(--color-text);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.block-content br + br {
+    content: '';
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+
+.section {
+    margin-bottom: 15px;
+}
+
+.section-title {
+    color: var(--color-text);
+    font-weight: bold;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* ============================================
+   SECTORS
+   ============================================ */
+
+.sectors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--gap-md);
+}
+
+.sector-block {
+    background: var(--bg-secondary);
+    padding: var(--padding-md);
+    border-left: 4px solid var(--color-accent);
+    border-top: 1px solid var(--color-border);
+}
+
+.sector-label {
+    color: var(--color-text-dim);
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.sector-name {
+    color: var(--color-accent);
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.sector-content {
+    color: var(--color-text);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ============================================
+   FACTIONS
+   ============================================ */
+
+.factions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--gap-md);
+}
+
+.faction-block {
+    background: var(--bg-secondary);
+    padding: var(--padding-md);
+    border-left: 4px solid var(--color-accent);
+    border-top: 1px solid var(--color-border);
+}
+
+.faction-name {
+    color: var(--color-accent);
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.faction-content {
+    color: var(--color-text);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.faction-content .accent {
+    color: var(--color-accent);
+}
+
+/* ============================================
+   LORE ENTRIES
+   ============================================ */
+
+.lore-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-md);
+}
+
+.lore-entry {
+    background: var(--bg-secondary);
+    padding: var(--padding-md);
+    border-left: 4px solid var(--color-accent);
+    border-top: 1px solid var(--color-border);
+}
+
+.lore-label {
+    color: var(--color-accent);
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.lore-text {
+    color: var(--color-text);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ============================================
+   STATUS BLOCK
+   ============================================ */
+
+.status-block {
+    background: var(--bg-secondary);
+    padding: var(--padding-md);
+    border-left: 4px solid var(--color-accent);
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.status-block .accent {
+    color: var(--color-accent);
+}
+
+/* ============================================
+   CLI PROMPT
+   ============================================ */
+
+.cli-prompt {
+    background: var(--bg-secondary);
+    padding: var(--padding-md);
+    border-left: 4px solid var(--color-accent);
+    border-top: 1px solid var(--color-border);
+    margin-top: 15px;
+    color: var(--color-text);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.cli-prompt .accent {
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+.cli-prompt .dim {
+    color: var(--color-text-dim);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.cli-footer {
+    padding-top: 12px;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-dim);
+    text-align: center;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+/* ============================================
+   ACCENT CLASS
+   ============================================ */
+
+.accent {
+    color: var(--color-accent);
+}
+
+.dim {
+    color: var(--color-text-dim);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    .terminal-container {
+        padding: 15px;
+    }
+
+    .info-grid,
+    .sectors-grid,
+    .factions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body {
+        font-size: 13px;
+    }
+
+    .navbar-nav {
+        margin-top: 10px !important;
+    }
+
+    .nav-link {
+        padding: 6px 0 !important;
+        margin-bottom: 5px !important;
+    }
+
+    .block-content,
+    .sector-content,
+    .faction-content,
+    .lore-text,
+    .status-block,
+    .cli-prompt {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .terminal-container {
+        padding: 10px;
+        border: none;
+    }
+
+    .navbar {
+        padding: 8px 15px !important;
+    }
+
+    .navbar-brand {
+        font-size: 12px !important;
+        margin-right: 10px !important;
+    }
+
+    .nav-link {
+        font-size: 12px !important;
+        padding: 6px 8px !important;
+    }
+
+    body {
+        font-size: 12px;
+    }
+
+    .info-grid,
+    .sectors-grid,
+    .factions-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .section {
+        margin-bottom: 10px;
+    }
+
+    .info-block,
+    .sector-block,
+    .faction-block,
+    .lore-entry,
+    .status-block,
+    .cli-prompt {
+        padding: 8px;
+        border-left-width: 3px;
+        margin-bottom: 0;
+    }
+
+    .block-content,
+    .sector-content,
+    .faction-content,
+    .lore-text,
+    .status-block,
+    .cli-prompt {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .display-user-avatar {
+        width: 20px !important;
+        height: 20px !important;
+    }
+}
+
+/* ============================================
+   TERMINAL CONTAINER
+   ============================================ */
+
+.terminal-container {
+    background: var(--bg-primary);
+    color: var(--color-text);
+    font-family: var(--font-family);
+    padding: 20px;
+    border: 1px solid var(--color-border);
+    line-height: 1.4;
+    max-width: 1200px;
+    margin: auto;
+    min-height: 100vh;
+}
+
+/* ============================================
+   CLI HEADER
+   ============================================ */
+
+.cli-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 15px;
+}
+
+.cli-header .accent {
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+.cli-header .dim {
+    color: var(--color-text-dim);
+}
+
+/* ============================================
+   BANNER
+   ============================================ */
+
+.banner {
+    background: var(--bg-secondary);
+    padding: var(--padding-md);
+    margin-bottom: 15px;
+    border-left: 4px solid var(--color-accent);
+}
+
+.banner .accent {
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+/* ============================================
+   INFO GRID
+   ============================================ */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--gap-md);
+    margin-bottom: 15px;
+}
+
+.info-block {
+    background: var(--bg-secondary);
+    padding: var(--padding-md);
+    border-left: 4px solid var(--color-accent);
+    border-top: 1px solid var(--color-border);
+}
+
+.block-title {
+    color: var(--color-accent);
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.block-content {
+    color: var(--color-text);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.block-content br + br {
+    content: '';
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+
+.section {
+    margin-bottom: 15px;
+}
+
+.section-title {
+    color: var(--color-text);
+    font-weight: bold;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* ============================================
+   SECTORS
+   ============================================ */
+
+.sectors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--gap-md);
+}
+
+.sector-block {
+    background: var(--bg-secondary);
+    padding: var(--padding-md);
+    border-left: 4px solid var(--color-accent);
+    border-top: 1px solid var(--color-border);
+}
+
+.sector-label {
+    color: var(--color-text-dim);
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.sector-name {
+    color: var(--color-accent);
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.sector-content {
+    color: var(--color-text);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ============================================
+   FACTIONS
+   ============================================ */
+
+.factions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--gap-md);
+}
+
+.faction-block {
+    background: var(--bg-secondary);
+    padding: var(--padding-md);
+    border-left: 4px solid var(--color-accent);
+    border-top: 1px solid var(--color-border);
+}
+
+.faction-name {
+    color: var(--color-accent);
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.faction-content {
+    color: var(--color-text);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.faction-content .accent {
+    color: var(--color-accent);
+}
+
+/* ============================================
+   LORE ENTRIES
+   ============================================ */
+
+.lore-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-md);
+}
+
+.lore-entry {
+    background: var(--bg-secondary);
+    padding: var(--padding-md);
+    border-left: 4px solid var(--color-accent);
+    border-top: 1px solid var(--color-border);
+}
+
+.lore-label {
+    color: var(--color-accent);
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.lore-text {
+    color: var(--color-text);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ============================================
+   STATUS BLOCK
+   ============================================ */
+
+.status-block {
+    background: var(--bg-secondary);
+    padding: var(--padding-md);
+    border-left: 4px solid var(--color-accent);
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.status-block .accent {
+    color: var(--color-accent);
+}
+
+/* ============================================
+   CLI PROMPT
+   ============================================ */
+
+.cli-prompt {
+    background: var(--bg-secondary);
+    padding: var(--padding-md);
+    border-left: 4px solid var(--color-accent);
+    border-top: 1px solid var(--color-border);
+    margin-top: 15px;
+    color: var(--color-text);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.cli-prompt .accent {
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+.cli-prompt .dim {
+    color: var(--color-text-dim);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.cli-footer {
+    padding-top: 12px;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-dim);
+    text-align: center;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+/* ============================================
+   ACCENT CLASS
+   ============================================ */
+
+.accent {
+    color: var(--color-accent);
+}
+
+.dim {
+    color: var(--color-text-dim);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    .terminal-container {
+        padding: 15px;
+    }
+
+    .info-grid,
+    .sectors-grid,
+    .factions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body {
+        font-size: 13px;
+    }
+
+    .block-content,
+    .sector-content,
+    .faction-content,
+    .lore-text,
+    .status-block,
+    .cli-prompt {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .terminal-container {
+        padding: 10px;
+        border: none;
+    }
+
+    body {
+        font-size: 12px;
+    }
+
+    .info-grid,
+    .sectors-grid,
+    .factions-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .section {
+        margin-bottom: 10px;
+    }
+
+    .info-block,
+    .sector-block,
+    .faction-block,
+    .lore-entry,
+    .status-block,
+    .cli-prompt {
+        padding: 8px;
+        border-left-width: 3px;
+        margin-bottom: 0;
+    }
+
+    .block-content,
+    .sector-content,
+    .faction-content,
+    .lore-text,
+    .status-block,
+    .cli-prompt {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+}
