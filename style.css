@@ -287,6 +287,46 @@ input, button, textarea, select {
 }
 
 /* ============================================
+   FULL-PAGE LAYOUT OVERRIDES
+   Hides the Toyhouse sidebar and expands the
+   terminal to fill the entire viewport.
+   ============================================ */
+
+/* Hide the left sidebar */
+.sidebar.sidebar-offcanvas,
+#sidebar {
+    display: none !important;
+}
+
+/* Expand main content column to full width */
+.content-main,
+.col-sm-12.col-md-9.col-lg-10.content-main {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Remove padding from the Bootstrap row and main container */
+.row-offcanvas,
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+#main.main-container,
+.main-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Remove the mobile off-canvas menu button */
+.nav-mobile-menu {
+    display: none !important;
+}
+
+/* ============================================
    TERMINAL CONTAINER
    ============================================ */
 
@@ -295,10 +335,10 @@ input, button, textarea, select {
     color: var(--color-text);
     font-family: var(--font-family);
     padding: 20px;
-    border: 1px solid var(--color-border);
+    border: none;
     line-height: 1.4;
-    max-width: 1200px;
-    margin: auto;
+    max-width: 100%;
+    margin: 0;
     min-height: 100vh;
 }
 
@@ -649,343 +689,5 @@ input, button, textarea, select {
     .display-user-avatar {
         width: 20px !important;
         height: 20px !important;
-    }
-}
-
-/* ============================================
-   TERMINAL CONTAINER
-   ============================================ */
-
-.terminal-container {
-    background: var(--bg-primary);
-    color: var(--color-text);
-    font-family: var(--font-family);
-    padding: 20px;
-    border: 1px solid var(--color-border);
-    line-height: 1.4;
-    max-width: 1200px;
-    margin: auto;
-    min-height: 100vh;
-}
-
-/* ============================================
-   CLI HEADER
-   ============================================ */
-
-.cli-header {
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--color-border);
-    margin-bottom: 15px;
-}
-
-.cli-header .accent {
-    color: var(--color-accent);
-    font-weight: bold;
-}
-
-.cli-header .dim {
-    color: var(--color-text-dim);
-}
-
-/* ============================================
-   BANNER
-   ============================================ */
-
-.banner {
-    background: var(--bg-secondary);
-    padding: var(--padding-md);
-    margin-bottom: 15px;
-    border-left: 4px solid var(--color-accent);
-}
-
-.banner .accent {
-    color: var(--color-accent);
-    font-weight: bold;
-}
-
-/* ============================================
-   INFO GRID
-   ============================================ */
-
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--gap-md);
-    margin-bottom: 15px;
-}
-
-.info-block {
-    background: var(--bg-secondary);
-    padding: var(--padding-md);
-    border-left: 4px solid var(--color-accent);
-    border-top: 1px solid var(--color-border);
-}
-
-.block-title {
-    color: var(--color-accent);
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.block-content {
-    color: var(--color-text);
-    font-size: 13px;
-    line-height: 1.6;
-}
-
-.block-content br + br {
-    content: '';
-}
-
-/* ============================================
-   SECTIONS
-   ============================================ */
-
-.section {
-    margin-bottom: 15px;
-}
-
-.section-title {
-    color: var(--color-text);
-    font-weight: bold;
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--color-border);
-}
-
-/* ============================================
-   SECTORS
-   ============================================ */
-
-.sectors-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--gap-md);
-}
-
-.sector-block {
-    background: var(--bg-secondary);
-    padding: var(--padding-md);
-    border-left: 4px solid var(--color-accent);
-    border-top: 1px solid var(--color-border);
-}
-
-.sector-label {
-    color: var(--color-text-dim);
-    font-size: 12px;
-    margin-bottom: 5px;
-}
-
-.sector-name {
-    color: var(--color-accent);
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.sector-content {
-    color: var(--color-text);
-    font-size: 13px;
-    line-height: 1.6;
-}
-
-/* ============================================
-   FACTIONS
-   ============================================ */
-
-.factions-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--gap-md);
-}
-
-.faction-block {
-    background: var(--bg-secondary);
-    padding: var(--padding-md);
-    border-left: 4px solid var(--color-accent);
-    border-top: 1px solid var(--color-border);
-}
-
-.faction-name {
-    color: var(--color-accent);
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.faction-content {
-    color: var(--color-text);
-    font-size: 13px;
-    line-height: 1.6;
-}
-
-.faction-content .accent {
-    color: var(--color-accent);
-}
-
-/* ============================================
-   LORE ENTRIES
-   ============================================ */
-
-.lore-blocks {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap-md);
-}
-
-.lore-entry {
-    background: var(--bg-secondary);
-    padding: var(--padding-md);
-    border-left: 4px solid var(--color-accent);
-    border-top: 1px solid var(--color-border);
-}
-
-.lore-label {
-    color: var(--color-accent);
-    font-weight: bold;
-    margin-bottom: 8px;
-    font-size: 13px;
-}
-
-.lore-text {
-    color: var(--color-text);
-    font-size: 13px;
-    line-height: 1.6;
-}
-
-/* ============================================
-   STATUS BLOCK
-   ============================================ */
-
-.status-block {
-    background: var(--bg-secondary);
-    padding: var(--padding-md);
-    border-left: 4px solid var(--color-accent);
-    border-top: 1px solid var(--color-border);
-    color: var(--color-text);
-    font-size: 13px;
-    line-height: 1.8;
-}
-
-.status-block .accent {
-    color: var(--color-accent);
-}
-
-/* ============================================
-   CLI PROMPT
-   ============================================ */
-
-.cli-prompt {
-    background: var(--bg-secondary);
-    padding: var(--padding-md);
-    border-left: 4px solid var(--color-accent);
-    border-top: 1px solid var(--color-border);
-    margin-top: 15px;
-    color: var(--color-text);
-    font-size: 13px;
-    line-height: 1.8;
-}
-
-.cli-prompt .accent {
-    color: var(--color-accent);
-    font-weight: bold;
-}
-
-.cli-prompt .dim {
-    color: var(--color-text-dim);
-}
-
-/* ============================================
-   FOOTER
-   ============================================ */
-
-.cli-footer {
-    padding-top: 12px;
-    border-top: 1px solid var(--color-border);
-    color: var(--color-text-dim);
-    text-align: center;
-    font-size: 12px;
-    margin-top: 15px;
-}
-
-/* ============================================
-   ACCENT CLASS
-   ============================================ */
-
-.accent {
-    color: var(--color-accent);
-}
-
-.dim {
-    color: var(--color-text-dim);
-}
-
-/* ============================================
-   RESPONSIVE DESIGN
-   ============================================ */
-
-@media (max-width: 768px) {
-    .terminal-container {
-        padding: 15px;
-    }
-
-    .info-grid,
-    .sectors-grid,
-    .factions-grid {
-        grid-template-columns: 1fr;
-    }
-
-    body {
-        font-size: 13px;
-    }
-
-    .block-content,
-    .sector-content,
-    .faction-content,
-    .lore-text,
-    .status-block,
-    .cli-prompt {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    .terminal-container {
-        padding: 10px;
-        border: none;
-    }
-
-    body {
-        font-size: 12px;
-    }
-
-    .info-grid,
-    .sectors-grid,
-    .factions-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-
-    .section {
-        margin-bottom: 10px;
-    }
-
-    .info-block,
-    .sector-block,
-    .faction-block,
-    .lore-entry,
-    .status-block,
-    .cli-prompt {
-        padding: 8px;
-        border-left-width: 3px;
-        margin-bottom: 0;
-    }
-
-    .block-content,
-    .sector-content,
-    .faction-content,
-    .lore-text,
-    .status-block,
-    .cli-prompt {
-        font-size: 11px;
-        line-height: 1.5;
     }
 }
